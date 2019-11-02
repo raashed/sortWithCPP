@@ -11,11 +11,13 @@ void mergeSort(int left, int middle, int right)
     vector <int> rightArray;
     int i, j, k;
     // insert left part in temp array
-    for (i = left; i <= middle; i++)
-        leftArray.push_back(myArray[i]);
+    i = left;
+    while (i <= middle)
+        leftArray.push_back(myArray[i++]);
     // insert right part in temp array
-    for (i = middle+1; i <= right; i++)
-        rightArray.push_back(myArray[i]);
+    i = middle + 1;
+    while (i <= right)
+        rightArray.push_back(myArray[i++]);
     i = 0;
     j = 0;
     k = left;
@@ -35,7 +37,8 @@ void mergeSort(int left, int middle, int right)
 
 void mergeSortStyle(int left, int right)
 {
-    if (left == right) return;
+    if (left == right)
+        return;
     // divide array into two
     int middle;
     middle = left + (right - left) / 2;
@@ -49,15 +52,16 @@ void inputArray()
     cout << "Input array length (1 - 20) we will create a array automatically" << endl;
     int n, i;
     cin >> n;
-    for (; n > 0; n--)
+    while(n--)
         myArray.push_back(rand() % 100);
 }
 
 void printArray()
 {
     int i;
-    for (i = 0; i < myArray.size(); i++)
-        cout << myArray[i] << " ";
+    i = 0;
+    while (i < myArray.size())
+        cout << myArray[i++] << " ";
     cout << endl;
 }
 
